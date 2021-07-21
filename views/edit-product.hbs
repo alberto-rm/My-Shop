@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar producto</title>
+</head>
+<body>
+    <h1>Editar {{product.name}}</h1>
+  <section class="b-header__menu">
+            <nav class="b-header__nav" >
+                {{#if user}}{{else}}
+                <div class="b-header__list">
+                    <button class="b-header__item"><a class="b-nav__link" href="/">INICIO</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/products">PRODUCTOS</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/products/create">COMPARTE</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/auth/register">REGISTRATE</a></button>
+                    {{/if}}
+                    <li class="b-header__icon"><a class="b-nav__icon" href="/auth/login"><i class="fas fa-user"></i></a></li>
+                </div>
+            </nav>
+        </section>
+    <form action="/products/edit/{{product._id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+
+        <label>
+            <p>nombre</p>
+            <input name="name" value="{{product.name}}" type="text" required placeholder="nombre">
+        </label>
+
+        <label>
+            <p>categoria</p>
+            <input name="category" value="{{product.category}}" type="text" required placeholder="category">
+        </label>
+
+        <label>
+            <p>descripción</p>
+            <input name="description" value="{{product.description}}" type="text" required placeholder="description">
+        </label>
+
+        <label>
+            <p>price</p>
+            <input name="price" type="number" value="{{product.price}}" required placeholder="Precio">
+        </label>
+
+        <label>
+            <p>imagen</p>
+            <input name="image" type="file" accept="jpg,jpeg,png">
+        </label>
+
+        <div>
+            <button type="submit">Crear mascota</button>
+        </div>
+
+    </form>
+</body> 
+</html>

@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "lion";
+    src: url(../fonts/lion_king.ttf);
+}
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #ccc;
+}
+.c-main  {
+    padding: 0 20px;
+}
+
+.b-header {
+    background: rgb(0, 103, 179);  
+    padding: 0;
+}
+
+.b-header__menu {
+    background: rgb(46, 48, 52);
+}
+
+.b-header__list {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.b-header__icon {
+    margin: 30px;
+    list-style: none;
+    font-size: 20px;
+}
+.b-nav__icon {
+    color: #fff;
+}
+.b-nav__icon:hover {
+    padding: auto;
+    transition:all 0.3s ease;
+    color: #0369bd;
+}
+.b-header__item {
+    margin: 20px 30px;
+    list-style: none;
+    font-family: "Raleway";
+    width: 110px;
+    height: 40px;
+    background: rgb(46, 48, 52);
+    border-radius: 10px;
+    font-size: 15px;
+}
+.b-header__item:hover {
+    padding: auto;
+    background:#0369bd;
+    transition:all 0.3s ease;
+    color: #fff;
+}
+.b-header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.b-header__btn{
+    margin: 10px;
+}
+.b-header__search {
+   margin: 5px;
+}
+.icon-menu {
+    font-size: 1.5em;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.icon-robot {
+    font-size: 60px;
+    color: lightgreen;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+}
+.b-header__title {
+    text-align: center;
+    font-size: 60px;
+    margin: 10px 20px;
+    color: #fff;
+    font-family: "lion";
+    text-shadow: 1px 1px 1px #23242a;
+}
+.b-nav__link {
+    text-decoration: none;
+    color: #fff;
+}
+.b-header__btn {
+    display: block;
+    padding: 10px 20px;
+    color: #000;
+    border: 1px solid #454546;
+    border-radius: 5px;
+}
+.b-header__input {
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+}

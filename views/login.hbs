@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/login.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <header class="b-header">
+        <div class="b-header__container">
+            <h1 class="b-header__title"><i class="icon-robot fas fa-robot"></i> My Shop {{user.fullName}}</h1>
+            <div class="b-header__container">
+                <input class="b-header__input" type="search" placeholder="Buscar producto">
+                <a href="" class="b-header__search"><i class="fas fa-search"></i></a>
+                <a href="" class="b-header__btn"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+          <section class="b-header__menu">
+            <nav class="b-header__nav" >
+                {{#if user}}{{else}}
+                <div class="b-header__list">
+                    <button class="b-header__item"><a class="b-nav__link" href="/">INICIO</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/products">PRODUCTOS</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/products/create">COMPARTE</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/auth/register">REGISTRATE</a></button>
+                    {{/if}}
+                    <li class="b-header__icon"><a class="b-nav__icon" href="/auth/login"><i class="fas fa-user"></i></a></li>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <main class="c-main">
+        <section class="c-login">
+
+            <h1 class="c-login__title">Login</h1>
+
+            <form action="/auth/login" method="POST">
+
+                <label>
+                    <p>Email</p>
+                    <input class="c-login__input" name="email" type="email" required placeholder="Email">
+                </label>
+
+                <label>
+                    <p>Password</p>
+                    <input class="c-login__input" name="password" type="password" required placeholder="Password">
+                </label>
+
+                <button class="c-login__button" type="submit">Login</button>
+
+            </form>
+            {{#if error}}
+            <div style="color: red">{{error}}</div>
+            {{/if}}
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <link rel="stylesheet" href="/styles/create-product.css">
+    <title>Comparte</title>
+</head>
+<body>
+   <header class="b-header">
+        <div class="b-header__container">
+            <h1 class="b-header__title"><i class="icon-robot fas fa-robot"></i> My Shop {{user.fullName}}</h1>
+            <div class="b-header__container">
+                <input class="b-header__input" type="search" placeholder="Buscar producto">
+                <a href="" class="b-header__search"><i class="fas fa-search"></i></a>
+                <a href="" class="b-header__btn"><i class="fas fa-shopping-cart"></i></a>
+            </div>
+        </div>
+          <section class="b-header__menu">
+            <nav class="b-header__nav" >
+                {{#if user}}{{else}}
+                <div class="b-header__list">
+                    <button class="b-header__item"><a class="b-nav__link" href="/">INICIO</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/products">PRODUCTOS</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/products/create">COMPARTE</a></button>
+                    <button class="b-header__item"><a class="b-nav__link" href="/auth/register">REGISTRATE</a></button>
+                    {{/if}}
+                    <li class="b-header__icon"><a class="b-nav__icon" href="/auth/login"><i class="fas fa-user"></i></a></li>
+                </div>
+            </nav>
+        </section>
+    </header>
+    <main class="c-main">
+
+<section class="c-create">
+
+    <h1 class="c-create__title">Crear Producto</h1>
+
+    <form action="/products/create" method="POST" enctype="multipart/form-data">
+
+        <label>
+            <p>Nombre</p>
+            <input class="c-create__input" name="name" type="string" required placeholder="Nombre">
+        </label>
+
+        <label>
+            <p>Categoria</p>
+            <input class="c-create__input" name="category" type="text" required placeholder="Categoria">
+        </label>
+
+        <label>
+            <p>Descripción</p>
+            <textarea class="c-create__description" name="description" id="" cols="20" rows="5" required placeholder="Descripcion"></textarea>
+        </label>
+
+        <label>
+            <p>Precio</p>
+            <input class="c-create__input" name="price" type="number" required placeholder="Precio">
+        </label>
+
+        <label>
+            <p>Imagen</p>
+            <input class="c-create__input" name="image" type="file" required accept="jpg,jpeg,png">
+        </label>
+
+        <div>
+            <button class="c-create__button" type="submit">CREAR</button>
+        </div>
+
+        {{#if error}}
+            <div style="color: red">{{error}}</div>
+        {{/if}}
+    </form>
+</section>
+    </main>
+</body>
+</html>
